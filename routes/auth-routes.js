@@ -18,7 +18,9 @@ router.get('/google', passport.authenticate('google', {
 }));
 
 // callback route for google to redirect to
-router.get('/google/redirect', (req, res) => {
+// take that URI code that came back & exchange that code with Google for profile information
+// goes back to passport-setup
+router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
     res.send('you reached the redirect URI');
 });
 

@@ -10,5 +10,7 @@ passport.use(
         callbackURL: '/auth/google/redirect'
     }, () => {
         // passport callback function
+        // comes here and calls the call back
+        console.log('passport callback function fired'); // run on this at it will hang now
     })
 );
